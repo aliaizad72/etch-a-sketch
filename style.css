@@ -1,0 +1,6 @@
+.rows {
+    width: 960px;
+    height: 60px;
+    border: 1px solid black;
+    border-bottom: 0;
+}
