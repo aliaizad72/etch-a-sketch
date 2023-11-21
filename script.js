@@ -16,7 +16,16 @@ for (i = 0; i < 16; i++) {
     row.setAttribute('class', 'rows');
     if (i === 15) {
         row.style.borderBottom = `1px solid black`;
-        console.log(i);
     }
+
+    for(j = 0; j < 16; j++) {
+        const column = document.createElement('div');
+        column.setAttribute('class', 'column');
+        row.appendChild(column);
+        if(j === 15) {
+            column.style.borderRight = '0';
+        }
+    }
+    
     sketchContainer.appendChild(row);
 }
