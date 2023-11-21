@@ -14,9 +14,20 @@
     <div id="header">
         Etch-a-sketch
     </div>
-    <div>
+    <div id="content">
         <div id="input-menu">
-
+            <div id="gridsize">
+                <span>Grid Settings</span>
+                <form action="">
+                    <label for="row-settings">Number of rows:</label><br>
+                    <input type="text" name="row-settings" id="row-settings"><br>
+                    <label for="column-settings">Number of columns:</label><br>
+                    <input type="text" name="column-settings" id="column-settings"><br>
+                    <button id="set-grid-button">Set Grid!</button><br>
+                    <button id="random-color-mode">Random Color Mode!</button><br>
+                    <button id="progressive-black">Progressively Blacker Mode!</button><br>
+                </form>
+            </div>
         </div>
         <div id="sketch-container">
     
