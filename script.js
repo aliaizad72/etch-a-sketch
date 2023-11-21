@@ -1,3 +1,6 @@
+
+createGrid(16, 16)
+
 function createGrid (numRows, numColumns) {
     const sketchContainer = document.querySelector('#sketch-container');
     for (i = 0; i < numRows; i++) {
@@ -24,7 +27,7 @@ function createGrid (numRows, numColumns) {
 }
 
 function calculateDimensions (numSquare) {
-    return `${600/numSquare}px`
+    return `${525/numSquare}px`
 }
 
 function paintItBlack(event) {
