@@ -1,4 +1,3 @@
-
 createGrid(16, 16)
 
 function createGrid (numRows, numColumns) {
@@ -34,3 +33,30 @@ function paintItBlack(event) {
     event.target.classList.add('painted');
 }
 
+const setGridBtn = document.querySelector('#set-grid-button');
+setGridBtn.addEventListener('click', changeGrid);
+
+function changeGrid(event) {
+    const rowVal = document.querySelector('#row-settings').value;
+    const columnVal = document.querySelector('#column-settings').value;
+    if (rowVal && columnVal) {
+        if (rowVal < 101 && rowVal > 0 && columnVal > 0 && columnVal < 101) {
+            removeGrid();
+            createGrid(+rowVal, +columnVal);
+        } else {
+            alert('Please enter a number from 0 to 100')
+            removeGrid();
+            createGrid(16, 16)
+        }
+    } else {
+        alert(`Please insert a number in both text fields`);
+        removeGrid();
+        createGrid(16, 16)
+    }
+    
+}
+
+function removeGrid() {
+    const grid = document.querySelectorAll('.rows');
+    grid.forEach((row) => row.remove());
+}
