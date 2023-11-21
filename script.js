@@ -21,6 +21,8 @@ for (i = 0; i < 16; i++) {
     for(j = 0; j < 16; j++) {
         const column = document.createElement('div');
         column.setAttribute('class', 'column');
+        column.addEventListener('mouseover', paintItBlack);
+
         row.appendChild(column);
         if(j === 15) {
             column.style.borderRight = '0';
@@ -28,4 +30,8 @@ for (i = 0; i < 16; i++) {
     }
     
     sketchContainer.appendChild(row);
+}
+
+function paintItBlack(event) {
+    event.target.classList.add('painted');
 }
