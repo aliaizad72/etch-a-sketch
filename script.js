@@ -24,7 +24,7 @@ function createGrid (numGrid) {
         sketchContainer.appendChild(row);
     }
 }
-    
+
 function calculateDimensions (numGrid) {
     return `${525/numGrid}px`;
 }
@@ -36,7 +36,7 @@ function paintItBlack(event) {
 const setGridBtn = document.querySelector('#set-grid-button');
 setGridBtn.addEventListener('click', changeGrid);
 
-function changeGrid(event) {
+function changeGrid() {
     const gridVal = document.querySelector('#grid-settings').value;
     if (gridVal) {
         if (gridVal < 101 && gridVal > 0) {
@@ -58,4 +58,28 @@ function changeGrid(event) {
 function removeGrid() {
     const grid = document.querySelectorAll('.rows');
     grid.forEach((row) => row.remove());
+}
+
+const randomColorBtn = document.querySelector('#random-color-mode');
+randomColorBtn.addEventListener('click', randomColorMode);
+
+function randomColorMode() {
+    changeGrid();
+    const grid = document.querySelectorAll('.column');
+    grid.forEach((row) => {
+        row.addEventListener('mouseover', paintItRandom);
+    })
+}
+
+function paintItRandom(event) {
+    if (event.target.style.backgroundColor === "") {
+        event.target.style.backgroundColor = randomRGB();
+    }
+}
+
+function randomRGB() {
+    let red = Math.floor(Math.random()*255);
+    let blue = Math.floor(Math.random()*255);
+    let green = Math.floor(Math.random()*255);
+    return `rgb(${red}, ${green}, ${blue})`;
 }
