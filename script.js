@@ -66,8 +66,8 @@ randomColorBtn.addEventListener('click', randomColorMode);
 function randomColorMode() {
     changeGrid();
     const grid = document.querySelectorAll('.column');
-    grid.forEach((row) => {
-        row.addEventListener('mouseover', paintItRandom);
+    grid.forEach((square) => {
+        square.addEventListener('mouseover', paintItRandom);
     })
 }
 
@@ -83,3 +83,37 @@ function randomRGB() {
     let green = Math.floor(Math.random()*255);
     return `rgb(${red}, ${green}, ${blue})`;
 }
+
+
+
+const getsDarkerBtn = document.querySelector('#progressive-black');
+getsDarkerBtn.addEventListener('click', getsDarkerMode);
+let counter = 9;
+
+function getsDarkerMode() {
+    changeGrid();
+    const grid = document.querySelectorAll('.column');
+    grid.forEach((square) => {
+        square.addEventListener('mouseover', paintItDarker);
+    })
+}
+
+function paintItDarker(event) {
+    if (event.target.style.backgroundColor === "") {
+        if (counter > 1) {
+            event.target.style.backgroundColor = `hsl(0, 0%, ${counter*10}%)`;
+            counter--;
+        } else {
+            event.target.style.backgroundColor = `hsl(0, 0%, ${counter*10}%)`;
+            counter = 9;
+        }
+    }
+}
+/*
+INITIATE a counter, start at 0
+EVERY time a mouseover event occurs,
+PAINT the square at 0% brighness
+ADD 1 to the counter
+Once it reached 100%
+SET the counter to 0 again
+*/
