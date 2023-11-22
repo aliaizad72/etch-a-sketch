@@ -6,10 +6,7 @@ function createGrid (numGrid) {
         const row = document.createElement('div');
         row.setAttribute('class', 'rows');
         row.style.height = calculateDimensions(numGrid);
-        if (i === numGrid-1) {
-            row.style.borderBottom = `1px solid black`;
-        }
-    
+
         for(j = 0; j < numGrid; j++) {
             const column = document.createElement('div');
             column.setAttribute('class', 'column');

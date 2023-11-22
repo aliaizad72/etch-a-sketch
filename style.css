@@ -13,7 +13,7 @@ body {
 #content {
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 100px;
 }
 
 span {
@@ -22,7 +22,6 @@ span {
 
 .rows {
     width: 525px;
-    border: 1px solid black;
     border-bottom: 0;
     display: flex;
     background-color: white;
@@ -30,7 +29,6 @@ span {
 
 .column {
     height: auto;
-    border-right: 1px solid black;
 }
 
 .painted {
